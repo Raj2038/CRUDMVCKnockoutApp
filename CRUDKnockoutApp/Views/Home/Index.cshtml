@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<script src="~/Scripts/knockout-3.4.1.js"></script>
+<select data-bind="options: tickets,
+        optionsCaption:'Choose....',
+        optionsText:'name',
+        value:chosenTicket"></select>
+
+<button data-bind="enable:chosenTicket, click:resetTicket">clear</button>
+<p data-bind="with:chosenTicket">
+    you have chosen <b data-bind="text:name"></b>
+    ($<span data-bind="text:price"></span>)
+</p>
+<script src="~/Scripts/ViewModel/TicketViewModel.js"></script>
+
